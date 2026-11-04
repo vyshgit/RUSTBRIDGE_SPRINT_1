@@ -1,0 +1,1 @@
+npm run practice -- students/RB7/week-01/typescript/inspector.ts
