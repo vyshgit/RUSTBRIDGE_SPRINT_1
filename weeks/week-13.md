@@ -186,7 +186,7 @@ A merchant operator can send strange input by accident or on purpose. A boundary
 3. Create the file boundary.db.test.ts inside that folder.
 4. Read your Week 12 tests and your route code. Choose one weak case: amount coercion, impossible date, equal timestamp paging, changed duplicate content, or cross-owner lookup.
 5. Write the test so it states the expected behaviour in plain words. Insert its own rows with known values so the result is stable.
-6. Run your database tests with `npm run test:student:db -- RB7` (same on Mac and Windows). Replace RB7 with your own id. Your test database name must end in _test.
+6. Run your database tests with `npm run test:student:db -- RB7` (same on Mac and Windows). Replace RB7 with your own id. Your test database name must end in \_test.
 7. For a separate single-file run after database setup, use `node --env-file-if-exists=.env --import tsx --test students/<student-id>/week-13/api/boundary.db.test.ts` (same on Mac and Windows). This command loads your .env values. `npm run test:practice` does not load them.
 8. Confirm the test fails and read the message. It must fail for the case you chose, not for a setup error.
 9. Fix the API code. Keep parsing strict and keep the agreed field contract. Do not loosen a rule just to get green.

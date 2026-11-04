@@ -93,7 +93,7 @@ Two deliveries of the same provider event must not create two records. The merch
 
 - PostgreSQL constraints, read the part on unique constraints: https://www.postgresql.org/docs/17/ddl-constraints.html
 - PostgreSQL INSERT and ON CONFLICT: https://www.postgresql.org/docs/17/sql-insert.html
-- [docs/02](../docs/02-setup-guide-mac-windows.md) Step 5 for local database setup (create a database whose name ends in _test).
+- [docs/02](../docs/02-setup-guide-mac-windows.md) Step 5 for local database setup (create a database whose name ends in \_test).
 - [docs/12](../docs/12-application-wiring.md) for the migration commands (npm run db:check, npm run migrate:practice) and how to connect the database to the API.
 - [docs/02](../docs/02-setup-guide-mac-windows.md) section 7 for the test commands (npm run test:db, npm run test:student:db).
 - Search keywords: "postgres composite unique constraint", "postgres on conflict returning existing id", "postgres error 23505"
@@ -120,19 +120,19 @@ Two deliveries of the same provider event must not create two records. The merch
 4. Create students/<student-id>/week-09/database/deduplication.sql. Put the inspection query there, with one comment line that states the count you found. Replace <student-id> with your number, for example RB7.
 5. If the count is above zero: stop, keep the rows, and write to your reviewer in the pull request what you found and what you propose. Do not delete or reset anything.
 6. Create students/<student-id>/week-08/database/migrations/002-event-identity.sql and put the unique key there. Do not edit an older migration.
-7. Fresh-schema check: create a fresh local database whose name ends in _test. Use the database setup in docs/02 Step 5.
-8. Set TEST_DATABASE_URL in your ignored .env to the fresh _test database. npm run migrate:practice reads this variable. Never commit .env.
-9. Apply all migrations from zero: npm run migrate:practice -- students/<student-id>/week-08/database/migrations. The command creates schema lab_<lowercase student-id> there. This shows the final schema works from an empty database.
+7. Fresh-schema check: create a fresh local database whose name ends in \_test. Use the database setup in docs/02 Step 5.
+8. Set TEST_DATABASE_URL in your ignored .env to the fresh \_test database. npm run migrate:practice reads this variable. Never commit .env.
+9. Apply all migrations from zero: npm run migrate:practice -- students/<student-id>/week-08/database/migrations. The command creates schema lab\_<lowercase student-id> there. This shows the final schema works from an empty database.
 10. Seed that fresh database. fixtures/practice.sql seeds the practice schema only, so it is not enough here. Write your own schema-qualified INSERT statements for the tables your migrations create, then check that your rows are there.
-11. Upgrade check: create a second local database whose name ends in _test. Use the database setup in docs/02 Step 5.
-12. Set TEST_DATABASE_URL in your ignored .env to the second _test database.
+11. Upgrade check: create a second local database whose name ends in \_test. Use the database setup in docs/02 Step 5.
+12. Set TEST_DATABASE_URL in your ignored .env to the second \_test database.
 13. Build the "before 002" state: move 002 out of the migrations folder for a moment, so the folder contains only 001. Run npm run migrate:practice -- students/<student-id>/week-08/database/migrations. This gives you the Week 8 schema.
 14. Create your own small upgrade fixture as a SQL file in your week-09 folder. It holds pre-migration rows, including two rows with the same merchant and provider event identity. Keep the original fixture unchanged. Load it into the second database and keep those rows.
 15. Inspect the duplicate rows in the second database. Agree the reconciliation with your reviewer in the pull request before you apply 002. Record the reconciliation SQL and its result in your week-09 folder.
 16. Apply the reconciliation SQL to the second database. Check that the rows are resolved as agreed, and check that the result is recorded.
-17. Add 002 back to the migrations folder. Apply migration 002: npm run migrate:practice -- students/<student-id>/week-08/database/migrations. Inspect the tables in schema lab_<lowercase student-id> with psql. This shows an existing database upgrades correctly.
+17. Add 002 back to the migrations folder. Apply migration 002: npm run migrate:practice -- students/<student-id>/week-08/database/migrations. Inspect the tables in schema lab\_<lowercase student-id> with psql. This shows an existing database upgrades correctly.
 18. Change the insert in your repository file to one atomic insert that handles the conflict, and that returns the existing id for an identical repeat. For the same identity with changed agreed fields, return 409 and keep the first row.
-19. Add a small test in week-09 that starts two identical requests together and checks that only one row exists. This test needs the database. Run it with npm run test:student:db -- RBx. The test database name must end in _test.
+19. Add a small test in week-09 that starts two identical requests together and checks that only one row exists. This test needs the database. Run it with npm run test:student:db -- RBx. The test database name must end in \_test.
 20. Stage the SQL artifact, the migration, the repository implementation and the concurrency test together. Read git diff --cached. Make one commit for D04.1. All of these belong in the same task commit.
     How to think about it: ask what the database can guarantee on its own, without asking your Node code first.
 
@@ -140,7 +140,7 @@ Two deliveries of the same provider event must not create two records. The merch
 
 - Read the full error text first. A 23505 error names the constraint, and that tells you which key was hit.
 - Search "postgres on conflict do nothing returning" and read the INSERT page from the top of the ON CONFLICT section.
-- Run npm run db:check to check the connection only. To confirm the migration, inspect the tables in schema lab_<lowercase student-id> using psql. Then ask in Discord with the command you ran and the exact error text.
+- Run npm run db:check to check the connection only. To confirm the migration, inspect the tables in schema lab\_<lowercase student-id> using psql. Then ask in Discord with the command you ran and the exact error text.
 
 ##### 6. What to Commit
 

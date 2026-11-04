@@ -7,7 +7,7 @@ These small Node scripts back the npm commands used by students and GitHub Actio
 | npm run setup:check            | Check Node, Git and installed root dependencies                     |
 | npm run db:check               | Check the dedicated Week 4 practice database and fixture count      |
 | npm run check                  | Validate curriculum/links, formatting, types, fast tests and builds |
-| npm run test:db                | Run shared and authored student DB tests in a dedicated _test DB    |
+| npm run test:db                | Run shared and authored student DB tests in a dedicated \_test DB   |
 | npm run dev:student -- RB1     | Start one student's continuing API with an isolated lab schema      |
 | npm run test:student -- RB1    | Discover that student's fast tests across their week folders        |
 | npm run test:student:db -- RB1 | Run that student's isolated database tests                          |

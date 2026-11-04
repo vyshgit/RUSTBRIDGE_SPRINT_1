@@ -79,7 +79,7 @@ npm run migrate:practice -- students/RB1/week-08/database/migrations
 npm run dev:student -- RB1
 ```
 
-The runner requires a database name ending in _test and creates lab_rb1. Seed merchants before inserting events; Week 11 extends that seed with operators. Read seed credentials from ignored configuration and do not print them.
+The runner requires a database name ending in \_test and creates lab_rb1. Seed merchants before inserting events; Week 11 extends that seed with operators. Read seed credentials from ignored configuration and do not print them.
 
 Before Week 9's unique-key migration, inspect older rows for duplicate merchant/provider identities. Preserve originals and obtain reviewed reconciliation; do not silently delete or reset. Test fresh and upgrade fixtures, separately from preventing new concurrent duplicates.
 

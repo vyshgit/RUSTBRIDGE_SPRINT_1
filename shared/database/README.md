@@ -6,9 +6,9 @@ Create migrations/001-events.sql here from the reviewed Week 8 work. Add numbere
 
 Write schema-relative SQL, without BEGIN/COMMIT/ROLLBACK in a migration file. Do not hard-code public table names. Reapplying a numbered file skips it; this small runner does not checksum old files, so review must preserve applied migration history. Product repository queries must explicitly use merchantdesk tables or set a deliberate connection search_path.
 
-For individual practice, run npm run migrate:practice -- students/RB1/week-08/database/migrations using your own RB number. It requires TEST_DATABASE_URL ending in _test and creates the lab_rb1 schema. Tests must use separate random namespaces, not erase another student's lab schema.
+For individual practice, run npm run migrate:practice -- students/RB1/week-08/database/migrations using your own RB number. It requires TEST_DATABASE_URL ending in \_test and creates the lab_rb1 schema. Tests must use separate random namespaces, not erase another student's lab schema.
 
-Product data uses DATABASE_URL. Fixture experiments use PRACTICE_DATABASE_URL. Tests use TEST_DATABASE_URL with a database name ending in _test and isolated test data.
+Product data uses DATABASE_URL. Fixture experiments use PRACTICE_DATABASE_URL. Tests use TEST_DATABASE_URL with a database name ending in \_test and isolated test data.
 
 The event schema needs immutable IDs, merchant ownership, integer amounts, currency/kind boundaries and timestamps. Week 9 adds database-enforced merchant/event identity; Week 11 adds operators, password hashes and an environment-fed synthetic seed.
 
