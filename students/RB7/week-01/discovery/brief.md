@@ -7,8 +7,8 @@
   **MerchantDesk will be a go-to place for the Merchant Operators to inspect their owned payment event records without having to worry about any duplicate events. The MerchantDesk API will acts as the data and security boundary which does ownership checks and validates payment records and forwards valid ones to the database to store as well as handles requests and responses from the react interface.The simulator supplies the synthetic payment records to the API.The merchant operator inspects their events from the react interface.**
 
 - ## Useful Actions
-  - **The user will be able to submit sandbox payment events to the MerchantDesk API via an authenticated  Simulator.**
-  - **The user will be able to  sign in and sign out of  the React Interface using their  credentials.**
+  - **The user will be able to submit sandbox payment events to the MerchantDesk API via an authenticated Simulator.**
+  - **The user will be able to sign in and sign out of the React Interface using their credentials.**
   - **The user will be able to inspect owned events, paginate them,filter or sort them.**
 - ## What's not included?
   - **Real payment processing.**
